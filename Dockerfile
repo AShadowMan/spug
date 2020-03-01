@@ -10,7 +10,7 @@ COPY . .
 # install lib
 RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.8/main/" > /etc/apk/repositories \
 	&& apk add --update --upgrade \
-	&& apk add tzdata libldap gcc libc-dev openldap-dev libffi-dev libuuid pcre mailcap linux-headers pcre-dev npm make
+	&& apk add tzdata libldap gcc libc-dev openldap-dev libffi-dev libuuid pcre mailcap linux-headers pcre-dev npm make redis git
 
 RUN python3 -m pip install --no-cache-dir -r $WORKDIR/spug_api/requirements.txt \
 	&& cd $WORKDIR/spug_web && rm -rf node_modules && npm install && cd .. \
