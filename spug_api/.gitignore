@@ -6,3 +6,5 @@ __pycache__/
 migrations/
 /access.log
 /repos/*
+
+Pipfile.lock
